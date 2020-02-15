@@ -8,6 +8,12 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
+        factory(User::class)->create([
+            'name' => 'James I',
+            'email' => 'james@example.com',
+            'password' => bcrypt('secret'),
+        ]);
+
         $users = factory(User::class, 10)->create();
 
         $users->each(function (User $user) {
