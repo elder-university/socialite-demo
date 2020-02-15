@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Http\Requests\CommentRequest;
 
 class CommentController extends Controller
 {
@@ -25,5 +26,12 @@ class CommentController extends Controller
     private function paginateComments()
     {
         return $this->comment->orderByDesc('created_at')->paginate(self::PER_PAGE);
+    }
+
+    public function store(CommentRequest $request)
+    {
+        $this->comment->create($request->validated());
+
+        return redirect(route('comments.index'));
     }
 }
