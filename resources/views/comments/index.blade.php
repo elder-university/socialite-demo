@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('comments.partials.create')
     @foreach($comments as $comment)
         <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
