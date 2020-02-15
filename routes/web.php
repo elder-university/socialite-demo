@@ -18,5 +18,3 @@ Route::get('/', function () {
 Route::get('/comments', 'CommentController@index')->name('comments.index');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
