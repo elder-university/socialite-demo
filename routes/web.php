@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/comments', 'CommentController@index')->name('comments.index');
+Route::post('/comments', 'CommentController@store')->name('comments.store');
 
 Auth::routes();

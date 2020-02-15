@@ -30,7 +30,7 @@ class CommentController extends Controller
 
     public function store(CommentRequest $request)
     {
-        $this->comment->create($request->validated());
+        $request->user()->comments()->create($request->validated());
 
         return redirect(route('comments.index'));
     }
