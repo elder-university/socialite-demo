@@ -70,6 +70,9 @@
                 </form>
             </div>
         </div>
+
+        @include('auth.partials.social')
+
     </div>
 </div>
 @endsection
