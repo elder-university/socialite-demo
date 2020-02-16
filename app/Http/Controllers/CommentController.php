@@ -26,7 +26,7 @@ class CommentController extends Controller
 
     private function paginateComments()
     {
-        return $this->comment->orderByDesc('created_at')->paginate(self::PER_PAGE);
+        return $this->comment->latest()->paginate(self::PER_PAGE);
     }
 
     public function store(CommentRequest $request)
