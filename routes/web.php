@@ -11,12 +11,18 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/auth/github', 'GitHubAuthController@auth')->name('auth.social.github');
+Route::get('/auth/github/callback', 'GitHubAuthController@callback')->name('auth.social.github.callback');
+
 Route::get('/comments', 'CommentController@index')->name('comments.index');
 Route::post('/comments', 'CommentController@store')->name('comments.store');
 Route::delete('/comments/{comment}', 'CommentController@destroy')->name('comments.destroy');
-
-Auth::routes();
