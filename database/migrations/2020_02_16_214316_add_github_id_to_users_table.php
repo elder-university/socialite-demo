@@ -14,7 +14,7 @@ class AddGithubIdToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('github_id')->unique();
+            $table->string('github_id')->nullable();
         });
     }
 
