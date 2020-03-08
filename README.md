@@ -11,3 +11,4 @@ Unlicensed
 You are free to use this code however you wish (at your own risk).
 
 This repository may be changed or removed without notice.  
+Clone or download it if you want to keep a copy for reference.
